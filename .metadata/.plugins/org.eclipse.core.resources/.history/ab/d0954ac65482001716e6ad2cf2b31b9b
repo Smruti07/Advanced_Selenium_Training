@@ -1,0 +1,33 @@
+package sa.dataDriven;
+
+import java.io.IOException;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class AdactinLogin {
+	
+	static WebDriver driver;
+
+	public static void main(String[] args) throws InvalidFormatException, IOException {
+		openHotelApp();
+		ExcelOperations.openExcelForReading("D:\\Credentilas.xlsx");
+        ExcelOperations.loadSheet(0);
+	}
+
+	public static void openHotelApp()
+	{
+		System.setProperty("webdriver.gecko.driver", "C:/Users/Hvuser/Downloads/geckodriver-v0.18.0-win64/geckodriver");
+		driver= new FirefoxDriver();		
+	}
+	
+	public static void login(String userName, String password)
+	{
+		driver.get("http://www.adactin.com/HotelApp/index.php");
+		driver.findElement(By.id("username")).sendKeys(userName);
+		driver.findElement(By.id("password")).sendKeys(password);
+		driver.findElement(By.id("login")).click();
+	}
+}

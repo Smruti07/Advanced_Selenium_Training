@@ -1,0 +1,56 @@
+package sa.PageClass;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import sa.TestCases.Base;
+
+
+public class LoginPage {
+	
+	@FindBy(id="username")
+	WebElement txtUsername;
+	
+	@FindBy(id="password")
+	WebElement txtPassword;
+	
+	@FindBy(id="login")
+	WebElement btnLogin;
+
+	
+	public LoginPage()
+	{
+		Base.openBrowser();
+		PageFactory.initElements(Base.driver, this);
+		Base.navigateToUrl();
+	}
+	
+	
+	public void setTxtUsername(String username)
+	{
+		txtUsername.clear();
+		txtUsername.sendKeys(username);
+	}
+	
+	public void setTxtPassword(String password)
+	{
+		txtUsername.clear();
+		txtUsername.sendKeys(password);
+	}
+	
+	public void clickBtnLogin()
+	{
+		btnLogin.click();
+	}
+	
+	public String getTxtUsername()
+	{
+		return txtUsername.getAttribute("value");
+	}
+	
+	public String getTxtPassword()
+	{
+		return txtPassword.getAttribute("value");
+	}
+
+}

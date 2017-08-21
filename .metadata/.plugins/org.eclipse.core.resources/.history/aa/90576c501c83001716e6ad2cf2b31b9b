@@ -1,0 +1,34 @@
+package sa.KeywardDriven;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class Action {
+	
+	static WebDriver driver;
+	static void initDriver()
+	{
+		System.setProperty("webdriver.gecko.driver", "C:/Users/Hvuser/Downloads/geckodriver.exe");
+		driver= new FirefoxDriver();
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	}
+	
+	static void EnterText(String LocatorType, String Locator, String ActionValue)
+	{
+		driver.findElement(By.xpath(Locator)).sendKeys(ActionValue);
+	}
+	
+	static void Click(String LocatorType, String Locator)
+	{
+		driver.findElement(By.xpath(Locator)).click();
+	}
+	
+	static void Select(String LocatorType, String Locator, String ActionValue)
+	{
+		
+	}
+
+}

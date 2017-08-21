@@ -1,0 +1,15 @@
+package sa.KeywardDriven;
+
+import java.io.IOException;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.testng.annotations.Test;
+
+public class TestRunner {
+
+	@Test
+	void test() throws InvalidFormatException, IOException
+	{
+		ExcelOperations.openExcelForReading("D:\\KeywardDriven.xlsx");
+	}
+}

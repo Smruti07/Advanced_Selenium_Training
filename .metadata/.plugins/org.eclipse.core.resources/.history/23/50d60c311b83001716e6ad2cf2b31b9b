@@ -1,0 +1,31 @@
+package sa.KeywardDriven;
+
+import java.io.IOException;
+
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.testng.annotations.Test;
+
+public class TestRunner {
+
+	@Test
+	void test() throws InvalidFormatException, IOException
+	{
+		ExcelOperations.openExcelForReading("D:\\KeywardDriven.xlsx");
+		ExcelOperations.loadSheet(0);
+		for(int rowNum=0; rowNum<5; rowNum++)
+		{
+			if(ExcelOperations.sheet.getRow(rowNum).getCell(2).getStringCellValue().equalsIgnoreCase("EnterText"))
+			{
+				Action.EnterText();
+			}
+			if(ExcelOperations.sheet.getRow(rowNum).getCell(2).getStringCellValue().equalsIgnoreCase("Click"))
+			{
+				Action.Click();
+			}
+			if(ExcelOperations.sheet.getRow(rowNum).getCell(2).getStringCellValue().equalsIgnoreCase("Select"))
+			{
+				Action.Select();
+			}
+		}
+	}
+}

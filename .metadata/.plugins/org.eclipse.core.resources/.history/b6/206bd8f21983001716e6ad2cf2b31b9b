@@ -1,0 +1,24 @@
+package sa.KeywardDriven;
+
+import org.openqa.selenium.WebDriver;
+
+public class Action {
+	
+	static WebDriver driver;
+	
+	void EnterText(String LocatorType, String Locator, String ActionValue)
+	{
+		
+	}
+	
+	void Click(String LocatorType, String Locator)
+	{
+		
+	}
+	
+	void Select(String LocatorType, String Locator, String ActionValue)
+	{
+		
+	}
+
+}

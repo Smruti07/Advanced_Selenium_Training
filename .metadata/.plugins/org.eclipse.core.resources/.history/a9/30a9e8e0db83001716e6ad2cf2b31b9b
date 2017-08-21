@@ -1,0 +1,32 @@
+package sa.PageClass;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class SearchHotelPage {
+	
+	@FindBy(id="username_show")
+	WebElement loginSuccessTxt;
+	
+	@FindBy(id="location")
+	WebElement dropdownLocation;
+	
+	@FindBy(id="hotels")
+	WebElement dropdownHotels;
+	
+	@FindBy(id="room_type")
+	WebElement dropdownRoomType;
+	
+	@FindBy(id="room_nos")
+	WebElement dropdownRoomNos;
+	
+	@FindBy(id="adult_room")
+	WebElement dropdownAdultPerRm;
+	
+	@FindBy(id="child_room")
+	WebElement dropdownChildPerRm;
+
+	
+
+
+}
